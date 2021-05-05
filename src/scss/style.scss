@@ -6,15 +6,22 @@
 $default-header-font: "Roboto", sans-serif;
 $default-general-font: "Montserrat", sans-serif;
 
-$primary-colour: #2a3436;
-$secondary-colour: #f7b775;
+$primary-colour: #396c7a;
+$secondary-colour: #2a3436;
+$neutral-colour-a: #fff2f1;
+$neutral-colour-b: #93e5ab;
+$accent-colour-a: #c48f59;
+$accent-colour-b: #7fdeff;
+$accent-colour-c: #b2ffc9;
+
 $portrait_url: url("../img/portrait.png");
 $pattern-background: url("../img/pattern2.png");
 /*text-shadows*/
 $text-shadowA: 0 1px 1px rgba(0, 0, 0, 0.4);
 $text-shadowB: black 0px 0.5px 0.5px;
 $text-shadowC: 2px 2px 2px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.1);
-
+$deep-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+  0px 18px 23px rgba(0, 0, 0, 0.1);
 *,
 *::before,
 *::after {
@@ -26,8 +33,7 @@ body {
   padding: 0;
   font-family: $default-general-font;
   line-height: 1.6;
-  color: var(--font-colour-dark);
-  background-color: $primary-colour;
+  background-color: $neutral-colour-a;
 }
 
 img {
@@ -69,15 +75,21 @@ html {
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: rgba(196, 143, 89, 0.15);
 }
-
+section {
+  min-height: 100vh;
+}
+main {
+  position: relative;
+  top: -6.6rem;
+}
 .navbar {
   margin-bottom: 2rem;
-  background-color: #2a3436;
+  background-color: $secondary-colour;
+  outline: 5px solid $accent-colour-a;
   color: $secondary-colour;
-  // height: 7rem;
   background-image: $pattern-background;
-  background-repeat: repeat-x;
-  background-position: center 28.3%;
+  background-repeat: repeat;
+  background-position: center center;
   text-align: center;
   margin: 0 auto;
   width: 100%;
@@ -94,6 +106,7 @@ html {
         transition: opacity 250ms ease-in-out 250ms;
       }
     }
+    border-bottom: 5px solid $accent-colour-a;
   }
 }
 .nav-toggle-label {
@@ -136,12 +149,13 @@ html {
 }
 nav {
   position: absolute;
+  background-color: $secondary-colour;
   top: 100%;
   left: 0;
   text-align: left;
   background-image: $pattern-background;
   background-repeat: repeat-x;
-  background-position: center 88%;
+  background-position: center 64.5%;
   width: 100%;
   transform-origin: top;
   transform: scale(1, 0);
@@ -158,8 +172,12 @@ nav {
   }
 
   a {
+    color: $accent-colour-a;
     opacity: 0;
     transition: opacity 150ms ease-in-out;
+    &:focus {
+      outline: 2px solid $accent-colour-b;
+    }
   }
 }
 
@@ -182,46 +200,44 @@ nav {
 /*intro*/
 .introduction {
   top: 10rem;
+  padding-top: 6rem;
   position: relative;
-  color: var(--font-colour-light);
+  background-color: $primary-colour;
+  border-bottom: 1px solid $accent-colour-a;
 }
 
 .detailed-intro {
   > * {
     font-family: $default-general-font;
-    color: $secondary-colour;
+    color: $neutral-colour-a;
     padding: 2rem;
     font-size: calc(1.8rem + 0.4vw);
     font-weight: normal;
-    text-shadow: 2px 2px 2px black;
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
   }
 }
 
 .intro-text {
   font-family: $default-general-font;
-  // width: 100%;
-  // min-width: 32rem;
   flex: 1 1 60%;
   padding: 0 2rem;
   &__header {
     font-size: 6rem;
     font-family: $default-header-font;
-    color: $secondary-colour;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-    background-image: url(../img/headingPattern4c.png);
+    color: $neutral-colour-b;
+    text-shadow: $deep-shadow;
     background-size: contain;
     background-clip: text;
     -webkit-background-clip: text;
-    color: transparent;
   }
 
   &__paragraph {
-    color: $secondary-colour;
+    color: $neutral-colour-a;
     > * {
       padding: 2rem 0;
       font-size: calc(1.8rem + 0.4vw);
       font-weight: normal;
-      text-shadow: 2px 2px 2px black;
+      text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
     }
   }
 }
@@ -236,7 +252,7 @@ nav {
     font-size: 4rem;
     font-family: $default-header-font;
     color: hsl(189, 13%, 30%);
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+    text-shadow: $deep-shadow;
   }
 
   &__portrait {
@@ -244,7 +260,6 @@ nav {
     background-image: $portrait_url;
     background-position: center;
     background-size: cover;
-    outline: $primary-colour 1px solid;
     font-family: $default-general-font;
   }
 }
@@ -258,11 +273,14 @@ main {
 }
 
 .projects {
-  top: 30rem;
+  border-top: 1px solid $accent-colour-a;
+  top: 10rem;
+  padding-top: 6rem;
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
   grid-template-rows: 10rem 1fr;
   justify-content: stretch;
+  background-color: $secondary-colour;
   width: 100%;
   // gap: 2rem;
   scroll-padding-top: 20em;
@@ -273,17 +291,18 @@ main {
   }
   h3 {
     font-size: 3rem;
+    text-shadow: $deep-shadow;
   }
   p {
     font-family: $default-general-font;
-    color: $primary-colour;
+    color: $neutral-colour-a;
     padding: 2rem 0;
     font-size: calc(1.2rem + 0.4vw);
     font-weight: normal;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
   }
   a:focus {
-    outline: 2px solid $primary-colour;
+    outline: 2px solid $accent-colour-b;
   }
 }
 
@@ -308,8 +327,7 @@ main {
 }
 .project {
   font-family: $default-general-font;
-  color: $primary-colour;
-  background-color: hsl(38, 38%, 70%);
+  background-color: $primary-colour;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -327,19 +345,20 @@ main {
   display: flex;
   flex-flow: row nowrap;
   font-size: 1.5rem;
-  // justify-content: space-around;
+  // justify-content: -around;
   > * {
     padding: 1rem;
   }
   align-items: center;
-  color: $primary-colour;
+  color: $neutral-colour-b;
 }
 .project-links {
   font-size: 2.5rem;
-  color: $primary-colour;
+  color: $accent-colour-a;
+  text-shadow: $deep-shadow;
   &:hover {
     cursor: pointer;
-    color: $secondary-colour;
+    color: $accent-colour-b;
   }
 }
 /*-------------------------------------------------------------------*/
@@ -349,19 +368,28 @@ main {
 -------------------------------------------------------------------*/
 
 @include responsive-max-width(800) {
+  // * p {
+  //   filter: blur(5px) !important;
+  // }
   body {
-    background-image: url(../img/bg.png);
+    // background-image: url(../img/bg.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: -20rem 30rem;
-    background-color: #2a3436;
+    background-color: $primary-colour;
   }
   html {
     scroll-padding-top: 10rem;
     scroll-behavior: smooth;
   }
+
   .introduction {
     top: 15rem;
+    background: url(../img/bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: -45rem 30rem;
+    padding-bottom: 10rem;
   }
   .navbar {
     background-position: center 80%;
@@ -395,7 +423,7 @@ main {
       display: block;
       height: 0.5rem;
       border-radius: 2px;
-      background: $secondary-colour;
+      background: $accent-colour-a;
       position: absolute;
       top: -1rem;
       left: 0;
@@ -435,6 +463,10 @@ main {
   }
   .projects {
     grid-template-columns: 1fr minmax(600px, 5fr) 1fr;
+    padding-top: 19rem;
+    clip-path: polygon(0 0, 20% 100px, 100% 0, 100% 100%, 0 100%);
+    position: relative;
+    top: 0rem;
   }
   .my-projects {
     place-content: center;
