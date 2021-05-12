@@ -66,11 +66,10 @@ section {
 
 main {
   position: relative;
-  top: -6.6rem;
 }
 
 .navbar {
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
   background-color: #2a3436;
   outline: 5px solid #c48f59;
   color: #2a3436;
@@ -230,7 +229,7 @@ nav {
   padding: 0 2rem;
 }
 
-.intro-text__header, .projects__header {
+.intro-text__header, .projects__header, .contact-me__heading {
   font-size: 6rem;
   font-family: "Roboto", sans-serif;
   color: #93e5ab;
@@ -290,15 +289,12 @@ main {
 }
 
 .projects {
+  padding-top: 19rem;
+  position: relative;
+  padding-bottom: 20rem;
   border-top: 1px solid #c48f59;
   top: 10rem;
   padding-top: 6rem;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 5fr 1fr;
-      grid-template-columns: 1fr 5fr 1fr;
-  -ms-grid-rows: 10rem 1fr;
-      grid-template-rows: 10rem 1fr;
   -webkit-box-pack: stretch;
       -ms-flex-pack: stretch;
           justify-content: stretch;
@@ -306,7 +302,6 @@ main {
   width: 100%;
   scroll-padding-top: 20em;
   scroll-behavior: smooth;
-  position: relative;
 }
 
 .projects h2 {
@@ -322,7 +317,7 @@ main {
   font-family: "Montserrat", sans-serif;
   color: #fff2f1;
   padding: 2rem 0;
-  font-size: calc(1.2rem + 0.4vw);
+  font-size: calc(1.4rem + 0.4vw);
   font-weight: normal;
   text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
 }
@@ -356,7 +351,7 @@ main {
   display: grid;
   -ms-grid-columns: (minmax(320px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  padding: 2rem;
+  padding: 1rem;
   gap: 2rem;
   place-content: center;
   -webkit-box-pack: center;
@@ -415,6 +410,32 @@ main {
 .project-links:hover {
   cursor: pointer;
   color: #7fdeff;
+}
+
+/*-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[contact section]
+-------------------------------------------------------------------*/
+.contact-me {
+  position: relative;
+  background-color: #396c7a;
+}
+
+.contact-me__heading {
+  margin-bottom: 2rem;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+* {
+  outline: 2px solid tomato;
 }
 
 /*-------------------------------------------------------------------*/
@@ -541,20 +562,14 @@ main {
   .intro .detailed-intro > * {
     padding: 2rem 0;
   }
-  .projects {
+  .contact-me {
     -ms-grid-columns: 1fr minmax(600px, 5fr) 1fr;
         grid-template-columns: 1fr minmax(600px, 5fr) 1fr;
-    padding-top: 19rem;
     -webkit-clip-path: polygon(0 0, 20% 100px, 100% 0, 100% 100%, 0 100%);
             clip-path: polygon(0 0, 20% 100px, 100% 0, 100% 100%, 0 100%);
     position: relative;
-    top: 0rem;
-  }
-  .my-projects {
-    place-content: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    top: -10rem;
+    padding-top: 12rem;
   }
 }
 
