@@ -71,15 +71,17 @@ p {
 }
 
 html {
-  scroll-padding-top: 25rem;
+  scroll-padding-top: 28rem;
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: rgba(196, 143, 89, 0.15);
 }
 section {
+  // scroll-snap-align: start;
   min-height: 100vh;
 }
 main {
   position: relative;
+  // scroll-snap-type: y proximity;
 }
 .navbar {
   padding-bottom: 2rem;
@@ -114,14 +116,14 @@ main {
   top: 0;
   right: 3%;
   margin-left: auto;
-  height: 100%;
+  height: 80%;
   display: flex;
   align-items: center;
   span,
   &::before,
   &::after {
     display: block;
-    background: #fff;
+    background: $accent-colour-a;
     height: 2px;
     width: 2rem;
     border-radius: 2px;
@@ -154,7 +156,7 @@ nav {
   text-align: left;
   background-image: $pattern-background;
   background-repeat: repeat-x;
-  background-position: center 64.5%;
+  background-position: center 66%;
   width: 100%;
   transform-origin: top;
   transform: scale(1, 0);
@@ -203,6 +205,7 @@ nav {
   position: relative;
   background-color: $primary-colour;
   border-bottom: 1px solid $accent-colour-a;
+  margin-bottom: 10rem;
 }
 
 .detailed-intro {
@@ -245,7 +248,7 @@ nav {
   border-radius: 1rem;
   padding: 2rem;
   color: var(--primary-colour);
-  min-width: 36rem;
+  // min-width: 36rem;
   flex: 1 1 40%;
   &__header {
     font-size: 4rem;
@@ -275,16 +278,15 @@ main {
   padding-top: 19rem;
   // clip-path: polygon(0 0, 20% 100px, 100% 0, 100% 100%, 0 100%);
   position: relative;
-  padding-bottom: 20rem;
+  padding-bottom: 8rem;
   border-top: 1px solid $accent-colour-a;
-  top: 10rem;
+  // top: 10rem;
   padding-top: 6rem;
   justify-content: stretch;
   background-color: $secondary-colour;
   width: 100%;
+  border-bottom: 1px solid $accent-colour-a;
 
-  scroll-padding-top: 20em;
-  scroll-behavior: smooth;
   h2 {
     padding-left: 2rem;
   }
@@ -366,8 +368,20 @@ main {
 [contact section]
 -------------------------------------------------------------------*/
 .contact-me {
+  scroll-padding-top: 10rem;
   position: relative;
   background-color: $primary-colour;
+  padding: 6rem 2rem 0;
+  border-top: 1px solid $accent-colour-a;
+  *::placeholder {
+    font-family: $default-general-font;
+  }
+}
+
+.contact-me__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 .contact-me__heading {
   @extend .intro-text__header;
@@ -375,13 +389,49 @@ main {
   grid-column: 2/3;
   grid-row: 1/2;
   height: max-content;
+  margin-block-start: 0;
 }
 .contact-me__details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  > * {
+    padding: 0.8rem;
+    border: none;
+    font-size: 2rem;
+    &:focus {
+      outline: 2px solid $accent-colour-b;
+    }
+  }
 }
 .contact-me__message {
+  textarea {
+    width: 100%;
+    border: none;
+    resize: none;
+    padding: 0.8rem;
+    font-size: 2rem;
+    &:focus {
+      outline: 2px solid $accent-colour-b;
+    }
+  }
 }
-* {
-  outline: 2px solid tomato;
+.contact-me__btn {
+  display: inline-block;
+  padding: 2rem 4rem;
+  background-color: $accent-colour-a;
+  text-transform: uppercase;
+  font-family: $default-general-font;
+  font-weight: bold;
+  border: none;
+  color: $secondary-colour;
+  &:focus {
+    outline: 2px solid $accent-colour-b;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: darken($accent-colour-a, 5%);
+  }
 }
 
 /*-------------------------------------------------------------------*/

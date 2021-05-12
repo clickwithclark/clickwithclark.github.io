@@ -130,10 +130,19 @@
         </section>
         <section id="contact-me" class="contact-me">
             <h3 class="contact-me__heading"> Contact Me</h3>
-            <div class="contact-me__container">
-                <div class="contact-me__details"></div>
-                <div class="contact-me__message"></div>
-            </div>
+            <form action="" method="POST">
+                <div class="contact-me__container">
+                    <div class="contact-me__details">
+                        <input type="text" required placeholder="Name">
+                        <input type="email" required placeholder="Email Address">
+                        <input type="text" required placeholder="Subject">
+                    </div>
+                    <div class="contact-me__message">
+                        <textarea rows="10" required placeholder="Message"></textarea>
+                    </div>
+                </div>
+                <button class="contact-me__btn">Send</button>
+            </form>
         </section>
 
 
