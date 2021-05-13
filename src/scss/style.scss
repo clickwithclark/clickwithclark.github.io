@@ -572,12 +572,15 @@ main {
     position: relative;
     top: -10rem;
     padding-top: 12rem;
+    position: relative;
   }
   .contact-me__container {
     display: flex;
-    width: 100%;
+    width: 50%;
     flex-direction: row;
     gap: 1rem;
+    position: relative;
+    z-index: 2;
     > * {
       flex: 1;
     }
@@ -585,15 +588,28 @@ main {
   .contact-me__details {
     justify-content: space-between;
     > * {
-      height: 23%;
+      height: 25%;
     }
   }
   .contact-me__btn {
     display: block;
-    margin: 2rem auto 0;
+    margin: 2rem auto 0 21%;
+    position: relative;
+    z-index: 2;
   }
   .contact-me__message {
     display: flex;
+  }
+
+  .contact-me__meeting-graphic {
+    background-image: url(../img/meeting2.svg);
+    background-repeat: no-repeat;
+    height: 60vw;
+    width: 50vw;
+    position: absolute;
+    top: -14rem;
+    left: 40%;
+    // outline:2px solid tomato;
   }
 }
 /*-------------------------------------------------------------------*/
