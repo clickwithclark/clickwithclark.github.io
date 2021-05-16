@@ -567,7 +567,11 @@ main {
 /*------------------------------------------------------------------
 [Larger Screen Sizes]
 -------------------------------------------------------------------*/
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1201px) {
+  * p {
+    -webkit-filter: blur(5px) !important;
+            filter: blur(5px) !important;
+  }
   body {
     background-size: contain;
     background-repeat: no-repeat;
@@ -692,7 +696,7 @@ main {
     -webkit-clip-path: polygon(0 0, 20% 100px, 100% 0, 100% 100%, 0 100%);
             clip-path: polygon(0 0, 20% 100px, 100% 0, 100% 100%, 0 100%);
     border: none;
-    padding: 12rem 0 20rem;
+    padding: 12rem 20rem 20rem;
   }
   .contact-me {
     border: none;
@@ -702,14 +706,14 @@ main {
             clip-path: polygon(0 0, 20% 100px, 100% 0, 100% 100%, 0 100%);
     position: relative;
     top: -10rem;
-    padding-top: 12rem;
+    padding: 12rem 20rem 0;
     position: relative;
   }
   .contact-me__container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 50%;
+    width: 60%;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -733,7 +737,7 @@ main {
   }
   .contact-me__btn {
     display: block;
-    margin: 2rem auto 0 21%;
+    margin: 2rem auto 0 24.5%;
     position: relative;
     z-index: 2;
   }
@@ -743,13 +747,14 @@ main {
     display: flex;
   }
   .contact-me__meeting-graphic {
-    background-image: url(../img/meeting2.svg);
+    background-image: url(../img/meeting.png);
+    background-size: contain;
     background-repeat: no-repeat;
-    height: 60vw;
-    width: 50vw;
+    height: 40vw;
+    width: 35vw;
     position: absolute;
-    top: -14rem;
-    left: 40%;
+    top: 6rem;
+    left: 62%;
   }
 }
 

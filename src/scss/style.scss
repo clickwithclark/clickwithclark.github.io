@@ -464,10 +464,10 @@ main {
 [Larger Screen Sizes]
 -------------------------------------------------------------------*/
 
-@include responsive-max-width(800) {
-  // * p {
-  //   filter: blur(5px) !important;
-  // }
+@include responsive-max-width(1201) {
+  * p {
+    filter: blur(5px) !important;
+  }
   body {
     // background-image: url(../img/bg.png);
     background-size: contain;
@@ -563,7 +563,7 @@ main {
   .projects {
     clip-path: polygon(0 0, 20% 100px, 100% 0, 100% 100%, 0 100%);
     border: none;
-    padding: 12rem 0 20rem;
+    padding: 12rem 20rem 20rem;
   }
   .contact-me {
     border: none;
@@ -571,12 +571,12 @@ main {
     clip-path: polygon(0 0, 20% 100px, 100% 0, 100% 100%, 0 100%);
     position: relative;
     top: -10rem;
-    padding-top: 12rem;
+    padding: 12rem 20rem 0;
     position: relative;
   }
   .contact-me__container {
     display: flex;
-    width: 50%;
+    width: 60%;
     flex-direction: row;
     gap: 1rem;
     position: relative;
@@ -593,7 +593,7 @@ main {
   }
   .contact-me__btn {
     display: block;
-    margin: 2rem auto 0 21%;
+    margin: 2rem auto 0 24.5%;
     position: relative;
     z-index: 2;
   }
@@ -602,14 +602,14 @@ main {
   }
 
   .contact-me__meeting-graphic {
-    background-image: url(../img/meeting2.svg);
+    background-image: url(../img/meeting.png);
+    background-size: contain;
     background-repeat: no-repeat;
-    height: 60vw;
-    width: 50vw;
+    height: 40vw;
+    width: 35vw;
     position: absolute;
-    top: -14rem;
-    left: 40%;
-    // outline:2px solid tomato;
+    top: 6rem;
+    left: 62%;
   }
 }
 /*-------------------------------------------------------------------*/
