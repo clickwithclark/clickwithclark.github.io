@@ -430,6 +430,12 @@ main {
     }
   }
 }
+.break {
+  flex-basis: 100%;
+  height: 0;
+  margin: 0;
+  border: 0;
+}
 .contact-me__btn {
   margin: 2rem auto 0;
   display: block;
@@ -464,9 +470,9 @@ main {
 [Larger Screen Sizes]
 -------------------------------------------------------------------*/
 
-@include responsive-max-width(1201) {
+@include responsive-max-width(800) {
   * p {
-    filter: blur(5px) !important;
+    // filter: blur(5px) !important;
   }
   body {
     // background-image: url(../img/bg.png);
@@ -533,16 +539,23 @@ main {
       transform: scale(1, 1);
     }
   }
-
+  // *{outline:2px solid tomato;}
   .intro {
+  
+    grid-column: unset;
+    grid-row: unset;
+    padding: 0 20rem;
     display: grid;
-    grid-template-columns: 1fr 3fr 2fr 1fr;
-    .intro-text {
-      grid-column: 2/3;
-    }
-    .intro-card {
-      grid-column: 3/4;
-    }
+    grid-template-columns: 2fr 1fr;
+    // grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    // .intro-text {
+
+    //   grid-column: 2/3;
+    // }
+    // .intro-card {
+    //   grid-column: 3/4;
+
+ 
 
     .detailed-intro {
       font-family: $default-general-font;
@@ -551,9 +564,9 @@ main {
       font-weight: normal;
       text-shadow: 2px 2px 2px black;
       color: $secondary-colour;
-      grid-column: 2/4;
-      grid-row: 2/3;
       align-self: center;
+      grid-column: auto;
+      grid-column: span 2;
       > * {
         padding: 2rem 0;
       }
@@ -567,7 +580,7 @@ main {
   }
   .contact-me {
     border: none;
-    grid-template-columns: 1fr minmax(600px, 5fr) 1fr;
+    // grid-template-columns: 1fr minmax(600px, 5fr) 1fr;
     clip-path: polygon(0 0, 20% 100px, 100% 0, 100% 100%, 0 100%);
     position: relative;
     top: -10rem;
@@ -575,30 +588,35 @@ main {
     position: relative;
   }
   .contact-me__container {
+    flex-wrap: wrap;
     display: flex;
     width: 60%;
     flex-direction: row;
     gap: 1rem;
     position: relative;
     z-index: 2;
-    > * {
-      flex: 1;
-    }
   }
   .contact-me__details {
     justify-content: space-between;
+    flex: 1 1 49%;
     > * {
       height: 25%;
     }
   }
+  .break {
+    flex-basis: 100%;
+    height: 0;
+    margin: 0;
+    border: 0;
+  }
   .contact-me__btn {
-    display: block;
-    margin: 2rem auto 0 24.5%;
+    justify-content: center;
     position: relative;
     z-index: 2;
   }
   .contact-me__message {
     display: flex;
+    flex: 1 1 49%;
   }
 
   .contact-me__meeting-graphic {
@@ -610,6 +628,19 @@ main {
     position: absolute;
     top: 6rem;
     left: 62%;
+  }
+}
+@include responsive-min-width(1120) {
+  .intro {
+       grid-template-columns: repeat(auto-fit, 600px);
+
+  }
+  .intro-text{
+    grid-row: 1/2;
+  
+  }
+  .intro-card{
+    grid-row: 2/3;
   }
 }
 /*-------------------------------------------------------------------*/

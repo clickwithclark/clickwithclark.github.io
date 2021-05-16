@@ -22,3 +22,8 @@
     @content;
   }
 }
+@mixin responsive-min-width($screen) {
+  @media screen and (max-width: $screen+"px") {
+    @content;
+  }
+}
