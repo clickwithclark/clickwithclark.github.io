@@ -91,55 +91,148 @@ form {
   display: none;
 }
 
-.nav-toggle:checked ~ nav {
+/*------------------------------------------------------------------
+[mobile menu icon]
+-------------------------------------------------------------------*/
+.icon {
+  position: absolute;
+}
+
+.icon:before {
+  content: "";
+  position: absolute;
+}
+
+.icon:after {
+  content: "";
+  position: absolute;
+}
+
+.icon i {
+  position: absolute;
+}
+
+.icon i:before {
+  content: "";
+  position: absolute;
+}
+
+.icon i:after {
+  content: "";
+  position: absolute;
+}
+
+.menu.icon:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 17px;
+  height: 2px;
+  background-color: #c48f59;
+}
+
+.menu.icon:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 17px;
+  height: 2px;
+  background-color: #c48f59;
+}
+
+.menu.icon {
+  color: #000;
+  position: absolute;
+  right: 10%;
+  top: 35%;
+  width: 17px;
+  height: 2px;
+  background-color: #c48f59;
+}
+
+.close.icon:after {
+  content: "";
+  position: absolute;
+  right: 10%;
+  top: 12%;
+  width: 21px;
+  height: 2px;
+  background-color: #c48f59;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  cursor: pointer;
+  position: absolute;
+}
+
+.close.icon:before {
+  content: "";
+  position: absolute;
+  right: 10%;
+  top: 12%;
+  width: 21px;
+  height: 2px;
+  background-color: #c48f59;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  cursor: pointer;
+  position: absolute;
+}
+
+.close.icon {
+  color: #000;
+  position: absolute;
+  right: -5%;
+  top: 35%;
+  width: 21px;
+  height: 21px;
+}
+
+/* animation */
+.icon,
+.icon:before,
+.icon:after,
+.icon i,
+.icon i:before,
+.icon i:after {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.menu-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 10%;
+  margin-left: auto;
+  height: 80%;
+  display: inline-block;
+  width: 2.1rem;
+  height: 2.1rem;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.menu-btn > * {
+  width: 100%;
+}
+
+.menu-active {
   -webkit-transform: scale(1, 1);
           transform: scale(1, 1);
   border-bottom: 5px solid #c48f59;
 }
 
-.nav-toggle:checked ~ nav .nav__list-item a {
+.menu-active .nav__list-item a {
   opacity: 1;
   -webkit-transition: opacity 250ms ease-in-out 250ms;
   transition: opacity 250ms ease-in-out 250ms;
 }
 
-.nav-toggle-label {
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  right: 3%;
-  margin-left: auto;
-  height: 80%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.nav-toggle-label span, .nav-toggle-label::before, .nav-toggle-label::after {
-  display: block;
-  background: #c48f59;
-  height: 2px;
-  width: 2rem;
-  border-radius: 2px;
-  position: relative;
-}
-
-.nav-toggle-label::before, .nav-toggle-label::after {
-  content: "";
-  position: absolute;
-}
-
-.nav-toggle-label::before {
-  bottom: 3rem;
-}
-
-.nav-toggle-label::after {
-  top: 3rem;
-}
-
+/*-------------------------------------------------------------------*/
 .logo {
   margin-left: 1rem;
   padding: 1rem;
@@ -598,7 +691,7 @@ main {
   .navbar {
     background-position: center 80%;
   }
-  .nav-toggle-label {
+  .menu-btn {
     display: none;
   }
   header {

@@ -101,49 +101,143 @@ form {
 .nav-toggle {
   display: none;
   &:checked ~ nav {
-    transform: scale(1, 1);
-    .nav__list-item {
-      a {
-        opacity: 1;
-        transition: opacity 250ms ease-in-out 250ms;
-      }
-    }
-    border-bottom: 5px solid $accent-colour-a;
   }
 }
-.nav-toggle-label {
+
+/*------------------------------------------------------------------
+[mobile menu icon]
+-------------------------------------------------------------------*/
+
+.icon {
+  position: absolute;
+}
+.icon:before {
+  content: "";
+  position: absolute;
+}
+.icon:after {
+  content: "";
+  position: absolute;
+}
+.icon i {
+  position: absolute;
+}
+.icon i:before {
+  content: "";
+  position: absolute;
+}
+.icon i:after {
+  content: "";
+  position: absolute;
+}
+
+.menu.icon:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 17px;
+  height: 2px;
+  background-color: $accent-colour-a;
+}
+
+.menu.icon:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 17px;
+  height: 2px;
+  background-color: $accent-colour-a;
+}
+
+.menu.icon {
+  color: #000;
+  position: absolute;
+  // margin-left: 2px;
+  // margin-top: 10px;
+  right: 10%;
+  top: 35%;
+  width: 17px;
+  height: 2px;
+  background-color: $accent-colour-a;
+}
+
+.close.icon:after {
+  content: "";
+  position: absolute;
+  right: 10%;
+  top: 12%;
+  width: 21px;
+  height: 2px;
+  background-color: $accent-colour-a;
+  transform: rotate(45deg);
   cursor: pointer;
   position: absolute;
-  top: 0;
-  right: 3%;
+}
+
+.close.icon:before {
+  content: "";
+  position: absolute;
+  right: 10%;
+  top: 12%;
+  width: 21px;
+  height: 2px;
+  background-color: $accent-colour-a;
+  transform: rotate(-45deg);
+  cursor: pointer;
+  position: absolute;
+}
+
+.close.icon {
+  color: #000;
+  position: absolute;
+  right: -5%;
+  top: 35%;
+  width: 21px;
+  height: 21px;
+}
+
+/* animation */
+.icon,
+.icon:before,
+.icon:after,
+.icon i,
+.icon i:before,
+.icon i:after {
+  transition: all 0.4s ease;
+}
+
+.menu-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 10%;
   margin-left: auto;
   height: 80%;
-  display: flex;
-  align-items: center;
-  span,
-  &::before,
-  &::after {
-    display: block;
-    background: $accent-colour-a;
-    height: 2px;
-    width: 2rem;
-    border-radius: 2px;
-    position: relative;
-  }
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-  }
-
-  &::before {
-    bottom: 3rem;
-  }
-  &::after {
-    top: 3rem;
+  display: inline-block;
+  width: 2.1rem;
+  height: 2.1rem;
+  transform: scale(2);
+  transform-origin: top left;
+  > * {
+    width: 100%;
   }
 }
+
+.menu-active {
+  transform: scale(1, 1);
+  .nav__list-item {
+    a {
+      opacity: 1;
+      transition: opacity 250ms ease-in-out 250ms;
+    }
+  }
+  border-bottom: 5px solid $accent-colour-a;
+}
+
+/*-------------------------------------------------------------------*/
+
 .logo {
   margin-left: 1rem;
   padding: 1rem;
@@ -498,7 +592,7 @@ main {
   .navbar {
     background-position: center 80%;
   }
-  .nav-toggle-label {
+  .menu-btn {
     display: none;
   }
   header {
@@ -541,7 +635,6 @@ main {
   }
   // *{outline:2px solid tomato;}
   .intro {
-  
     grid-column: unset;
     grid-row: unset;
     padding: 0 20rem;
@@ -554,8 +647,6 @@ main {
     // }
     // .intro-card {
     //   grid-column: 3/4;
-
- 
 
     .detailed-intro {
       font-family: $default-general-font;
@@ -632,15 +723,14 @@ main {
 }
 @include responsive-min-width(1120) {
   .intro {
-       grid-template-columns: repeat(auto-fit, 600px);
-
+    grid-template-columns: repeat(auto-fit, 600px);
   }
-  .intro-text{
+  .intro-text {
     grid-row: 1/2;
-  
   }
-  .intro-card{
+  .intro-card {
     grid-row: 2/3;
   }
 }
+
 /*-------------------------------------------------------------------*/
