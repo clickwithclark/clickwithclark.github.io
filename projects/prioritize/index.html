@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="manifest" href="./manifest.json" />
+    <title>Prioritize</title>
+    <script defer src="./js/main.3ffd0e33d3f44efff3f4.js"></script>
+    <script defer src="./js/bootstrap.71219e60cbe05e476ff3.js"></script>
+    <script defer src="./js/font-awesome.5275c9a96582840f5d7a.js"></script>
+    <link href="./css/main.e07ff1dbe9ae84e836e3.css" rel="stylesheet">
+    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- #region of navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid justify-content-end"> <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span
+                        class="navbar-toggler-icon"></span> </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <form class="d-flex mt-2" id="login-form"> <input id="email" required class="form-control mb-2"
+                            type="email" placeholder="email" aria-label="email"> <input id="password" required
+                            class="form-control ml-1 mb-2" type="password" placeholder="password" aria-label="password">
+                        <button id="login-btn" class="btn btn-dark ml-1" type="submit">Login</button> <button
+                            id="signup-btn" class="btn btn-dark ml-1" type="submit">Sign Up</button> </form>
+                    <form class="d-flex mt-2" id="logout-form">
+                        <h4><span id="username" class="badge bg-dark text-light mr-1"> </span></h4> <button
+                            id="logout-btn" class="btn btn-dark ml-1" type="submit">Log Out</button>
+                    </form>
+                </div>
+            </div>
+        </nav> <!-- #endregion of navbar -->
+        <div class="logo-container"> <img id="logo" src="img/cwc-shadesa05dc6e0694f089c83c8.png"
+                alt="clickwithclark logo" />
+            <div class="bubble"> </div>
+        </div>
+        <h1 class="app-name"> Pr<span class="title-style">1</span>oriti<span class="title-style">23</span> </h1>
+        <div class="buttons">
+            <div class="main-btn"> <span class="category-sort"><i class="fas fa-tags"></i></span> <span
+                    class="date-sort"><i class="fas fa-calendar-alt"></i></span> <span class="delete-selected"><i
+                        class="fas fa-check-square"></i></span> <span class="delete-all"><i
+                        class="fas fa-trash-alt"></i></span> </div>
+            <div class="network-btns"> <span class="download-btn"><i class="fas fa-cloud-download-alt"></i></span> <span
+                    class="save-btn"><i class="fas fa-save"></i></span> </div>
+            <div class="special-btn"> <span class="tutorial-btn"><i class="fas fa-chalkboard-teacher"></i></span> <span
+                    class="drop-down-entry"><i class="fas fa-plus"></i></span> </div>
+        </div> <input id="todoInput" list="groups" type="text" placeholder="Add New Task...📄" /> <datalist id="groups">
+            <option value="(    )"></option>
+        </datalist>
+        <ul id="todoList" class="list-group" data-draggable-container></ul> <!-- #region of confirmation popup -->
+        <div class="confirmation-popup">
+            <h2> Confirm Deletion</h2> <button class="confirmation-btn yes-btn"><i class="fas fa-check"></i></button>
+            <button class="confirmation-btn no-btn"><i class="fas fa-times"></i></button>
+        </div> <!-- #endregion of confirmation popup -->
+    </div>
+</body>
+
+</html>
